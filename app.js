@@ -5,13 +5,16 @@ let logger = require('morgan');
 let mongoose = require('mongoose');
 let cors = require('cors');
 
-mongoose.connect('mongodb://localhost/Employees', (error) => {
-  if (error) {
-    console.log(error);
-  } else {
-    console.log('Connected to Database');
+mongoose.connect(
+  'mongodb+srv://ayush:zB0LtsxbnZRTnEjE@kaptunecluster.xq6ev.mongodb.net/Employees?retryWrites=true&w=majority',
+  (error) => {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log('Connected to Database');
+    }
   }
-});
+);
 
 let employeesRouter = require('./routes/employees.js');
 
